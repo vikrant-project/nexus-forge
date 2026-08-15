@@ -1,9 +1,6 @@
 node_modules/
 dist/
+output/
 *.log
 .DS_Store
 Thumbs.db
-.env
-.env.local
-coverage/
-.system_generated/
