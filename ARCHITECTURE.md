@@ -1,8 +1,8 @@
-# Nexus Forge â€” Architecture Deep-Dive
+# Nexus Forge Architecture Specification
 
 ## 1. Single-Model Multi-Persona Paradigm
 
-Traditional agent systems either rely on complex multi-model setups requiring distinct API keys or fall back onto naive single-threaded retry loops. Nexus Forge eliminates both limitations by running **40 specialized expert personas** on a single native foundation model within Antigravity IDE.
+Traditional agent systems either rely on complex multi-model setups requiring distinct API keys or fall back onto naive single-threaded retry loops. Nexus Forge eliminates both limitations by running 40 specialized expert personas on a single native foundation model within Antigravity IDE.
 
 ### Scoped Context Injection (ContextBus)
 Rather than passing an entire unbounded chat transcript, each persona node receives a strictly filtered context window containing:
@@ -16,32 +16,32 @@ Rather than passing an entire unbounded chat transcript, each persona node recei
 
 ```
   [Node: Requirements Analyst (v1)]
-               â”‚
-               â–¼ (DEPENDENCY)
-  [Node: Database Schema Designer (v1)] â”€â”€(CRITIQUE: Score 96)â”€â”€â–º [PASSED]
-               â”‚
-               â–¼ (DEPENDENCY)
+               |
+               v (DEPENDENCY)
+  [Node: Database Schema Designer (v1)] --(CRITIQUE: Score 96)--> [PASSED]
+               |
+               v (DEPENDENCY)
   [Node: Senior Backend Engineer (v1)]
-               â”‚
+               |
           (CRITIQUE: Score 70 < 90)
-               â”‚
-               â–¼ (REVISION)
-  [Node: Senior Backend Engineer (v2)] â”€â”€(CRITIQUE: Score 95)â”€â”€â–º [PASSED]
+               |
+               v (REVISION)
+  [Node: Senior Backend Engineer (v2)] --(CRITIQUE: Score 95)--> [PASSED]
 ```
 
 ### Edge Semantics:
-1. **`DEPENDENCY`**: Strict ordering constraint. Downstream nodes are blocked until all upstream predecessors reach `completed` status.
-2. **`CRITIQUE`**: Scored evaluation ($0 - 100$) attached to a node, listing strengths, weaknesses, and required remedies.
-3. **`REVISION`**: Directed non-destructive link pointing from an insufficient node ($v1$) to a newly synthesized revision node ($v2$).
+1. DEPENDENCY: Strict ordering constraint. Downstream nodes are blocked until all upstream predecessors reach completed status.
+2. CRITIQUE: Scored evaluation (0 to 100) attached to a node, listing strengths, weaknesses, and required remedies.
+3. REVISION: Directed non-destructive link pointing from an insufficient node (v1) to a newly synthesized revision node (v2).
 
 ---
 
 ## 3. Convergence & Circuit Breaker Math
 
-A node $N$ converges to `completed` if and only if:
-$$\text{CritiqueScore}(N) \ge \text{Threshold}(N.\text{personaId})$$
+A node N converges to completed if and only if:
+CritiqueScore(N) >= Threshold(N.personaId)
 Or if the revision counter reaches the hard safety cap:
-$$\text{Version}(N) \ge \text{MaxRevisions}(N.\text{personaId})$$
+Version(N) >= MaxRevisions(N.personaId)
 
 This mathematical guarantee eliminates infinite cycles while preserving complete graph auditability.
 
@@ -49,8 +49,8 @@ This mathematical guarantee eliminates infinite cycles while preserving complete
 
 ## 4. Cyber Security & SAST Gatekeeping
 
-Every synthesized codebase passes through Persona #21 (`cyber_security_auditor`):
-- **DOM Sanitization**: HTML entity encoding on all user inputs.
-- **SQLi Resistance**: Parameterized queries and strict type validation.
-- **RBAC Authority**: Role permission verification before state modifications.
-- **Final Sign-Off**: Release blocked unless Principal Engineer (#39) issues explicit approval.
+Every synthesized codebase passes through Persona #21 (cyber_security_auditor):
+- DOM Sanitization: HTML entity encoding on all user inputs.
+- SQLi Resistance: Parameterized queries and strict type validation.
+- RBAC Authority: Role permission verification before state modifications.
+- Final Sign-Off: Release blocked unless Principal Engineer (#39) issues explicit approval.

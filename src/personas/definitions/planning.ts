@@ -25,8 +25,8 @@ export class PlanningCluster {
       `Analyze user request: "${input.prompt}". Generate detailed functional requirements, user journeys, edge cases, acceptance criteria, and non-functional guarantees.`
     );
 
-    const isStudentMgmt = input.prompt.toLowerCase().includes('student') || input.prompt.toLowerCase().includes('school') || input.prompt.toLowerCase().includes('university');
-    const isEcommerce = input.prompt.toLowerCase().includes('shop') || input.prompt.toLowerCase().includes('e-commerce') || input.prompt.toLowerCase().includes('store');
+    const isStudentMgmt = (input.prompt || '').toLowerCase().includes('student') || (input.prompt || '').toLowerCase().includes('school') || (input.prompt || '').toLowerCase().includes('university');
+    const isEcommerce = (input.prompt || '').toLowerCase().includes('shop') || (input.prompt || '').toLowerCase().includes('e-commerce') || (input.prompt || '').toLowerCase().includes('store');
 
     let features: string[] = [];
     if (isStudentMgmt) {
@@ -112,7 +112,7 @@ export class PlanningCluster {
   }
 
   public static executeDatabaseDesigner(input: PersonaExecutionInput): PersonaExecutionOutput {
-    const isStudent = input.prompt.toLowerCase().includes('student');
+    const isStudent = (input.prompt || '').toLowerCase().includes('student');
     const schemaSql = isStudent
       ? `CREATE TABLE students (
   id TEXT PRIMARY KEY,

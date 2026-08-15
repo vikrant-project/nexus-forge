@@ -3,8 +3,8 @@ import { PersonaExecutionInput, PersonaExecutionOutput } from './planning.js';
 
 export class FrontendCluster {
   public static executeSeniorFrontend(input: PersonaExecutionInput): PersonaExecutionOutput {
-    const isUser = input.prompt.toLowerCase().includes('user');
-    const isStudent = input.prompt.toLowerCase().includes('student');
+    const isUser = (input.prompt || '').toLowerCase().includes('user');
+    const isStudent = (input.prompt || '').toLowerCase().includes('student');
 
     let appJsCode = '';
     if (isUser) {
@@ -220,13 +220,13 @@ class UserApp {
         </td>
         <td><span class="badge badge-role">\${AuthManager.sanitizeInput(u.role)}</span></td>
         <td><span class="badge badge-dept">\${AuthManager.sanitizeInput(u.department)}</span></td>
-        <td>\${u.twoFactor ? '<span class="text-success font-bold">Ã¢Å“â€œ Enabled</span>' : '<span class="text-muted">Disabled</span>'}</td>
+        <td>\${u.twoFactor ? '<span class="text-success font-bold">Ã¢Å“" Enabled</span>' : '<span class="text-muted">Disabled</span>'}</td>
         <td><span class="badge badge-\${u.status}">\${u.status.toUpperCase()}</span></td>
         <td>
           <div class="action-btn-group">
             <button class="btn-icon edit-btn" data-id="\${u.id}" title="Edit Profile">Ã¢Å“Å½</button>
-            <button class="btn-icon status-btn" data-id="\${u.id}" title="Toggle Active/Suspended">Ã¢ÂÂ»</button>
-            <button class="btn-icon delete-btn text-danger" data-id="\${u.id}" title="Delete User">Ã°Å¸â€”â€˜</button>
+            <button class="btn-icon status-btn" data-id="\${u.id}" title="Toggle Active/Suspended">Ã¢»</button>
+            <button class="btn-icon delete-btn text-danger" data-id="\${u.id}" title="Delete User">Ã°Å¸—â€˜</button>
           </div>
         </td>
       </tr>
@@ -499,7 +499,7 @@ class StudentApp {
         <td>
           <div class="action-btn-group">
             <button class="btn-icon edit-btn" data-id="\${s.id}" title="Edit Student">Ã¢Å“Å½</button>
-            <button class="btn-icon delete-btn text-danger" data-id="\${s.id}" title="Delete Student">Ã°Å¸â€”â€˜</button>
+            <button class="btn-icon delete-btn text-danger" data-id="\${s.id}" title="Delete Student">Ã°Å¸—â€˜</button>
           </div>
         </td>
       </tr>

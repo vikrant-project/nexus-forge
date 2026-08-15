@@ -3,8 +3,8 @@ import { PersonaExecutionInput, PersonaExecutionOutput } from './planning.js';
 
 export class BackendCluster {
   public static executeSeniorBackend(input: PersonaExecutionInput): PersonaExecutionOutput {
-    const isUser = input.prompt.toLowerCase().includes('user');
-    const isStudent = input.prompt.toLowerCase().includes('student');
+    const isUser = (input.prompt || '').toLowerCase().includes('user');
+    const isStudent = (input.prompt || '').toLowerCase().includes('student');
 
     let backendCode = '';
     if (isUser) {

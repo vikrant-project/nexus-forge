@@ -3,7 +3,7 @@ import { PersonaExecutionInput, PersonaExecutionOutput } from './planning.js';
 
 export class QACluster {
   public static executeUnitTestAuthor(input: PersonaExecutionInput): PersonaExecutionOutput {
-    const isUser = input.prompt.toLowerCase().includes('user');
+    const isUser = (input.prompt || '').toLowerCase().includes('user');
 
     const testCode = isUser
       ? `import { describe, it, expect, beforeEach } from 'vitest';

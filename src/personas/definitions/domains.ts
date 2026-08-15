@@ -13,7 +13,7 @@ export class DomainCluster {
   }
 
   public static executeStudentManagementSpecialist(input: PersonaExecutionInput): PersonaExecutionOutput {
-    const isUser = input.prompt.toLowerCase().includes('user');
+    const isUser = (input.prompt || '').toLowerCase().includes('user');
 
     let htmlContent = '';
     if (isUser) {
@@ -22,7 +22,7 @@ export class DomainCluster {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus Identity Ã¢â‚¬â€ Enterprise User Management System</title>
+  <title>Nexus Identity Ã¢â‚¬" Enterprise User Management System</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âš¡</text></svg>">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,24 +33,24 @@ export class DomainCluster {
   <!-- Navigation Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-icon">Ã¢Å¡Â¡</div>
+      <div class="brand-icon">Ã¢Å¡¡</div>
       <div class="brand-name">Nexus<span>Identity</span></div>
     </div>
     <nav class="nav-group">
       <button class="nav-item active" data-tab="dashboard">
-        <span class="nav-icon">Ã°Å¸â€œÅ </span>
+        <span class="nav-icon">Ã°Å¸"Å </span>
         <span>Dashboard</span>
       </button>
       <button class="nav-item" data-tab="users">
-        <span class="nav-icon">Ã°Å¸â€˜Â¥</span>
+        <span class="nav-icon">Ã°Å¸â€˜¥</span>
         <span>Users Directory</span>
       </button>
       <button class="nav-item" data-tab="roles">
-        <span class="nav-icon">Ã°Å¸â€ºÂ¡Ã¯Â¸Â</span>
+        <span class="nav-icon">Ã°Å¸â€º¡Ã¯¸</span>
         <span>Roles & RBAC</span>
       </button>
       <button class="nav-item" data-tab="audit">
-        <span class="nav-icon">Ã°Å¸â€œÅ“</span>
+        <span class="nav-icon">Ã°Å¸"Å“</span>
         <span>Audit Logs</span>
       </button>
     </nav>
@@ -130,7 +130,7 @@ export class DomainCluster {
 
       <div class="card" style="margin-bottom: 24px;">
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <input type="text" id="search-input" class="form-control" style="flex: 2; min-width: 240px;" placeholder="Ã°Å¸â€Â Search by name, email, department, or role...">
+          <input type="text" id="search-input" class="form-control" style="flex: 2; min-width: 240px;" placeholder="Ã°Å¸" Search by name, email, department, or role...">
           <select id="filter-role" class="form-control" style="flex: 1; min-width: 160px;">
             <option value="">All Roles</option>
             <option value="Super Admin">Super Admin</option>
@@ -222,7 +222,7 @@ export class DomainCluster {
     <div class="modal-dialog">
       <div class="top-bar" style="margin-bottom: 20px;">
         <h3 id="modal-title" class="page-title" style="font-size: 20px;">Invite Team Member</h3>
-        <button class="btn-icon" id="modal-close" style="font-size: 20px;">Ã¢Å“â€¢</button>
+        <button class="btn-icon" id="modal-close" style="font-size: 20px;">Ã¢Å“*</button>
       </div>
       <form id="user-form">
         <input type="hidden" id="edit-user-id">
@@ -304,7 +304,7 @@ export class DomainCluster {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus University Ã¢â‚¬â€ Student Management System</title>
+  <title>Nexus University Ã¢â‚¬" Student Management System</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âš¡</text></svg>">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -320,19 +320,19 @@ export class DomainCluster {
     </div>
     <nav class="nav-group">
       <button class="nav-item active" data-tab="dashboard">
-        <span class="nav-icon">Ã°Å¸â€œÅ </span>
+        <span class="nav-icon">Ã°Å¸"Å </span>
         <span>Dashboard</span>
       </button>
       <button class="nav-item" data-tab="students">
-        <span class="nav-icon">Ã°Å¸Å½â€œ</span>
+        <span class="nav-icon">Ã°Å¸Å½"</span>
         <span>Students</span>
       </button>
       <button class="nav-item" data-tab="courses">
-        <span class="nav-icon">Ã°Å¸â€œÅ¡</span>
+        <span class="nav-icon">Ã°Å¸"Å¡</span>
         <span>Courses</span>
       </button>
       <button class="nav-item" data-tab="analytics">
-        <span class="nav-icon">Ã°Å¸â€œË†</span>
+        <span class="nav-icon">Ã°Å¸"Ë†</span>
         <span>Analytics</span>
       </button>
     </nav>
@@ -412,7 +412,7 @@ export class DomainCluster {
 
       <div class="card" style="margin-bottom: 24px;">
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <input type="text" id="search-input" class="form-control" style="flex: 2; min-width: 240px;" placeholder="Ã°Å¸â€Â Search students by name, email, or ID...">
+          <input type="text" id="search-input" class="form-control" style="flex: 2; min-width: 240px;" placeholder="Ã°Å¸" Search students by name, email, or ID...">
           <select id="filter-dept" class="form-control" style="flex: 1; min-width: 180px;">
             <option value="">All Departments</option>
             <option value="Computer Science">Computer Science</option>
@@ -483,7 +483,7 @@ export class DomainCluster {
     <div class="modal-dialog">
       <div class="top-bar" style="margin-bottom: 20px;">
         <h3 id="modal-title" class="page-title" style="font-size: 20px;">Enroll Student</h3>
-        <button class="btn-icon" id="modal-close" style="font-size: 20px;">Ã¢Å“â€¢</button>
+        <button class="btn-icon" id="modal-close" style="font-size: 20px;">Ã¢Å“*</button>
       </div>
       <form id="student-form">
         <input type="hidden" id="edit-student-id">

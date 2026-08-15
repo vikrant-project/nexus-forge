@@ -185,7 +185,7 @@ class StudentApp {
         <td>
           <div class="action-btn-group">
             <button class="btn-icon edit-btn" data-id="${s.id}" title="Edit Student">Ã¢Å“Å½</button>
-            <button class="btn-icon delete-btn text-danger" data-id="${s.id}" title="Delete Student">Ã°Å¸â€”â€˜</button>
+            <button class="btn-icon delete-btn text-danger" data-id="${s.id}" title="Delete Student">Ã°Å¸—â€˜</button>
           </div>
         </td>
       </tr>

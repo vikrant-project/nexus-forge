@@ -34,7 +34,7 @@ export class MetaCluster {
       content: [
         `# Nexus Forge Generated Application: Student Management System`,
         ``,
-        `Built autonomously by **Nexus Forge** â€” Single-Model Multi-Persona Agent Orchestration System.`,
+        `Built autonomously by **Nexus Forge** — Single-Model Multi-Persona Agent Orchestration System.`,
         ``,
         `## ðŸš€ Key Features`,
         `- **Interactive Student Directory**: Full CRUD with instant search and department filters.`,
