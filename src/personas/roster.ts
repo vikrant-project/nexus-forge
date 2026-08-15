@@ -425,6 +425,13 @@ export class RosterRegistry {
     PERSONA_ROSTER.map((p) => [p.id, p])
   );
 
+    public static getAll(): PersonaMetadata[] {
+    return [...PERSONA_ROSTER];
+  }
+
+  public static getPersonasByDiscipline(discipline: string): PersonaMetadata[] {
+    return PERSONA_ROSTER.filter((p) => p.discipline === discipline);
+  }
   public static getAllPersonas(): PersonaMetadata[] {
     return [...PERSONA_ROSTER];
   }
