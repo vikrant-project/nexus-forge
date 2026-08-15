@@ -1,0 +1,33 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Nexus Forge Generated API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/records": {
+      "get": {
+        "summary": "List records with pagination and filters"
+      },
+      "post": {
+        "summary": "Create new record with schema validation"
+      }
+    },
+    "/api/records/{id}": {
+      "get": {
+        "summary": "Get record by ID"
+      },
+      "put": {
+        "summary": "Update record attributes"
+      },
+      "delete": {
+        "summary": "Delete or archive record"
+      }
+    },
+    "/api/analytics/kpi": {
+      "get": {
+        "summary": "Fetch aggregate statistics and KPI metrics"
+      }
+    }
+  }
+}

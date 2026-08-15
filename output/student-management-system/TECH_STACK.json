@@ -1,0 +1,14 @@
+{
+  "frontend": {
+    "core": "HTML5 Semantic + Modern ES6+ JavaScript",
+    "styling": "Vanilla CSS Custom Properties (HSL Dark Glassmorphism)",
+    "typography": "Inter / Plus Jakarta Sans",
+    "icons": "Handcrafted SVG Icon Library"
+  },
+  "backend": {
+    "runtime": "Node.js / Express or Modern REST Controller",
+    "persistence": "InMemory / LocalStorage Synchronized Repository",
+    "validation": "Deterministic Schema Validator"
+  },
+  "testing": "Vitest / Modern Test Suite"
+}

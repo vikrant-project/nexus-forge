@@ -1,0 +1,40 @@
+{
+  "name": "@nexus-forge/orchestrator",
+  "version": "1.0.0",
+  "description": "Nexus Forge: Single-Model Multi-Persona Agent Orchestration Framework for Antigravity IDE",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "nexus-forge": "./dist/bin/nexus-forge.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "benchmark": "tsx benchmarks/benchmark-runner.ts",
+    "cli": "tsx src/bin/nexus-forge.ts"
+  },
+  "keywords": [
+    "multi-agent",
+    "orchestration",
+    "personas",
+    "antigravity",
+    "mcp",
+    "graph-reasoning",
+    "dag"
+  ],
+  "author": "vikrant-project",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.1.0",
+    "commander": "^12.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "tsx": "^4.10.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
